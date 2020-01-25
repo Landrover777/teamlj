@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -41,5 +42,7 @@ async def on_message(message):
         author = message.guild.get_member (int(message.content[4:22]))
         msg = message.content[23:]
         await author.send(msg)
-
-client.run("NjQ3ODA5NDQ2MTIyMzU2Nzc2.XfMXeA.ADTs3zkKEbM99cFcPFlYcp8WtKM")
+        
+        
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
